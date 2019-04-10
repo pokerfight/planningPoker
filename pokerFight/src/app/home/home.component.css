@@ -1,0 +1,26 @@
+.container-fluid {
+    background-color: black;
+}
+
+.text {
+    color: white;
+}
+
+.rodape {
+	position: absolute;
+    bottom: 0;
+    background-color: grey;
+}
+
+.sideLeft {
+    width: 100hv;
+    height:90hv;
+    background-color: white;
+
+}
+
+.sideRight {
+    width: 100hv;
+    height:90vh;
+    background-color: #DCDCDC;
+}

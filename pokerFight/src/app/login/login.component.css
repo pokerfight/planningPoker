@@ -1,0 +1,11 @@
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.btn {
+    width: 180px;
+    margin-top: 10px;
+}
