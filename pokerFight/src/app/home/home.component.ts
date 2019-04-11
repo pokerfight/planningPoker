@@ -17,9 +17,14 @@ export class HomeComponent implements OnInit {
     {name: "Thiago Nascimento"},
     {name: "Geovanni Mamedes"}
   ]
+  color: boolean = false;
 
   addParticipants() {
     this.participantes.push({name: "Participante Novo"})
+    
+    if (this.participantes.length === 6) {
+      this.color = true;
+    }
   }
 
 }
