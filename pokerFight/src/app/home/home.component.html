@@ -18,13 +18,19 @@
         <div class="container">
             <h5>Para Participar é simples</h5>
             <p>Utilize o QR Code abaixo</p>
-            <img alt='' src="assets/images/qrcode.jpg">
+            <img alt='' src="assets/images/qrcode.jpg" (click)="addParticipants()">
             <p>- OU -</p>
             <a href="http://localhost:4200/home">http://pokerfight.com</a>
             <p>E insira o PIN abaixo</p>
         </div>
       </div>
     <div class="col-sm-6 sideRight">  
+
+        <h4>Participantes (3)</h4>
+
+        <div class="alert alert-primary" role="alert" *ngFor="let participante of participantes; let i = index">
+          {{participantes[i].name}}  
+        </div>
     </div>
   </div>
 </div>

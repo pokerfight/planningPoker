@@ -24,3 +24,7 @@
     height:90vh;
     background-color: #DCDCDC;
 }
+
+.alert-primary {
+    color: white;
+}

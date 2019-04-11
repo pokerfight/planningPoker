@@ -12,4 +12,14 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  participantes = [
+    {name: "Daniel Quirino"},
+    {name: "Thiago Nascimento"},
+    {name: "Geovanni Mamedes"}
+  ]
+
+  addParticipants() {
+    this.participantes.push({name: "Participante Novo"})
+  }
+
 }
