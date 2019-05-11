@@ -1,8 +1,11 @@
-<div class="container-fluid">
-  <h1>PokerFigth</h1> 
-  <h5>Qual o nome da luta</h5> 
-  <input placeholder="sprint 4" autofocus/>
-  <button type="button" class="btn btn-success" (click)="redirectHome()"> Criar Luta -></button>
+
+<div class="container">
+    <div class="container-fluid">
+        <h1>{{title}}</h1> 
+        <h5>{{message}}</h5> 
+        <input placeholder=" sprint 4" autofocus [(ngModel)]="sprintName"/>
+        <button type="button" class="btn btn-success" (click)="redirectHome()"><b>Criar Luta -></b></button>
+      </div>      
 </div>
 
 

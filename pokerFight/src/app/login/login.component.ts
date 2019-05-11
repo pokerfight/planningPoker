@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   constructor(private router: Router) { }
@@ -13,8 +14,13 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  title: string = "PokerFigth";
+  message: string = "Qual o nome da luta ?";
+  
+  sprintName = '';
+
   redirectHome(){
-    this.router.navigate(['/home'])
+    this.router.navigate(['/home']);
   }
 
 }

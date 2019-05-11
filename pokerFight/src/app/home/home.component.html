@@ -1,45 +1,29 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm">
-      <h4 class="text">PokerFigth</h4>
-    </div>
-    <div class="col-sm">
-      <h5 class="text">Sprint 4</h5>
-    </div>
-    <div class="col-sm">
-      <button class="btn btn-danger">Finalizar</button>
-    </div>
-  </div>
+<div class="cabecalho">
+  <h4 class="text projectName">{{projectName}}</h4>
+  <h5 class="text sprintName">{{sprintName}}</h5>
+  <button class="btn btn-danger"><p class="buttonTitle">{{buttonName}}<p></button>
 </div>
 
-<div class="container-fluid" >
-  <div class="row">
-      <div class="col-sm-6 sideLeft">
-        <div class="container">
-            <h5>Para Participar é simples</h5>
-            <p>Utilize o QR Code abaixo</p>
-            <img alt='' src="assets/images/qrcode.jpg" (click)="addParticipants()">
-            <p>- OU -</p>
-            <a href="http://localhost:4200/home">http://pokerfight.com</a>
-            <p>E insira o PIN abaixo</p>
-        </div>
+<div class="row">
+    <div class="col-sm-6 sideLeft">
+      <br><br>
+      <h5>Para Participar é simples</h5>
+      <p>Utilize o QR Code abaixo</p>
+      <img alt='' src="assets/images/qrcode.jpg" (click)="addParticipants()">
+      <p>- OU -</p>
+      <a href="http://localhost:4200/home">http://pokerfight.com</a>
+      <p>E insira o PIN abaixo</p>
+    </div>
+
+  <div class="col-sm-6 sideRight">  
+    <br><br>
+      <h4>Participantes ({{numberOfParticipants}})</h4>
+      <div class="alert alert-primary" role="alert" *ngFor="let participante of participantes; let i = index">
+        {{participantes[i].name}}  
       </div>
-    <div class="col-sm-6 sideRight">  
-
-        <h4>Participantes (3)</h4>
-
-        <div class="alert alert-primary" role="alert" *ngFor="let participante of participantes; let i = index">
-          {{participantes[i].name}}  
-        </div>
-    </div>
   </div>
 </div>
-
 
 <div class="container-fluid rodape" [style.background-color] = "color ? 'green' : 'gray'">
-  <div class="row">
-    <div class="col-sm-12">
-      <h4 class="text">Iniciar -></h4>
-    </div>
-  </div>
+  <h4 class="text-rodape">Aguardando participantes ...</h4>
 </div>
