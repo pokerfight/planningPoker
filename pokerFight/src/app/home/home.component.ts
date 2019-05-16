@@ -9,6 +9,20 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  footerTitle: string = 'Aguardando participantes...'
+
+  changeFooterTitle(){
+    let promise1 = new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        resolve('Iniciar');
+      }, 2000)
+    });
+
+    promise1.then((resultado)=>{
+      console.log(resultado)
+      this.footerTitle = resultado.toString();
+    })
+  } 
   
 
   numberOfParticipants: number = 0;
@@ -22,6 +36,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getNumberOfPartipantes();
+
+    this.changeFooterTitle();
   }
 
   addParticipants() {
