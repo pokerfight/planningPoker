@@ -1,18 +1,8 @@
-<div class="cabecalho">
-  <h4 class="text projectName">{{projectName}}</h4>
-  <h5 class="text sprintName">{{sprintName}}</h5>
-  <button class="btn btn-danger"><p class="buttonTitle">{{buttonName}}<p></button>
-</div>
+<app-app-header></app-app-header>
 
 <div class="row">
     <div class="col-sm-6 sideLeft">
-      <br><br>
-      <h5>Para Participar é simples</h5>
-      <p>Utilize o QR Code abaixo</p>
-      <img alt='' src="assets/images/qrcode.jpg" (click)="addParticipants()">
-      <p>- OU -</p>
-      <a href="http://localhost:4200/home">http://pokerfight.com</a>
-      <p>E insira o PIN abaixo</p>
+      <app-qr-code></app-qr-code>
     </div>
 
   <div class="col-sm-6 sideRight">  

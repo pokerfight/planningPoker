@@ -9,9 +9,7 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  projectName: string = 'PokerFigth';
-  sprintName: string = 'sprint 4';
-  buttonName: string = 'X Finalizar';
+  
 
   numberOfParticipants: number = 0;
   color: boolean = false;

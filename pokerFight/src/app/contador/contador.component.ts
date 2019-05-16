@@ -9,7 +9,7 @@ export class ContadorComponent implements OnInit {
 
   constructor() { }
 
-  contador = 10;
+  contador = 30;
   zero = '';
 
   startCounter() {

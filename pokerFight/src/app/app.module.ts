@@ -7,13 +7,17 @@ import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
 import { LoginComponent } from './login/login.component';
 import { ContadorComponent } from './contador/contador.component';
+import { AppHeaderComponent } from './app-header/app-header.component';
+import { QrCodeComponent } from './qr-code/qr-code.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ContadorComponent
+    ContadorComponent,
+    AppHeaderComponent,
+    QrCodeComponent
   ],
   imports: [
     BrowserModule,
