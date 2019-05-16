@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'DS-Digital';
+    src: url("ds-digital.ttf");
+    font-size: 1em;
+} 
+
+p {
+    font-family: 'DS-Digital';
+    font-size: 200px
+}
