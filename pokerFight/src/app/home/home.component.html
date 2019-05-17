@@ -5,15 +5,9 @@
       <app-qr-code></app-qr-code>
     </div>
 
-  <div class="col-sm-6 sideRight">  
-    <br><br>
-      <h4>Participantes ({{numberOfParticipants}})</h4>
-      <div class="alert alert-primary" role="alert" *ngFor="let participante of participantes; let i = index">
-        {{participantes[i].name}}  
-      </div>
-  </div>
+    <div class="col-sm-6 sideRight">  
+      <app-participantes></app-participantes>
+    </div>
 </div>
 
-<div class="container-fluid rodape" [style.background-color] = "color ? 'green' : 'gray'">
-  <h4 class="text-rodape">{{footerTitle}}</h4>
-</div>
+<app-footer></app-footer>

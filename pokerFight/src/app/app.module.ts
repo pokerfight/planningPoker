@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { ContadorComponent } from './contador/contador.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { QrCodeComponent } from './qr-code/qr-code.component';
+import { FooterComponent } from './footer/footer.component';
+import { ParticipantesComponent } from './participantes/participantes.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { QrCodeComponent } from './qr-code/qr-code.component';
     LoginComponent,
     ContadorComponent,
     AppHeaderComponent,
-    QrCodeComponent
+    QrCodeComponent,
+    FooterComponent,
+    ParticipantesComponent
   ],
   imports: [
     BrowserModule,

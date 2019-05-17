@@ -18,18 +18,3 @@
     height:90vh;
     background-color: #DCDCDC;
 }
-
-.alert-primary {
-    color: white;
-}
-
-
-/* Rodape */
-.rodape {
-	position: absolute;
-    bottom: 0;
-}
-
-.text-rodape {
-    text-align: center;
-}
