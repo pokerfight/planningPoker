@@ -1,0 +1,15 @@
+ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+      display: inline;
+  }
+
+  span {
+      padding: 5px;
+      margin: 3px;
+      background-color: #DCDCDC;
+      border-radius: 10%;
+  }

@@ -11,12 +11,13 @@ export class FooterComponent implements OnInit {
 
   footerTitle: string = 'Aguardando participantes...';
   color: boolean = false;
+  cursor: string;
 
   changeFooterTitle(){
     let promise1 = new Promise((resolve, reject) => {
       setTimeout(()=>{
         resolve('Iniciar');
-      }, 2000)
+      }, 6000)
     });
 
     promise1.then((resultado)=>{
@@ -24,6 +25,7 @@ export class FooterComponent implements OnInit {
       this.footerTitle = resultado.toString();
 
       this.changeFooterColor();
+      this.changeFooterCursor();
     })
   } 
 
@@ -35,6 +37,11 @@ export class FooterComponent implements OnInit {
     if (this.footerTitle === 'Iniciar') {
       this.color = true;
     }
+  }
+
+  changeFooterCursor() {
+    if (this.footerTitle === 'Iniciar') 
+      this.cursor = 'pointer';
   }
 
 }

@@ -1,12 +1,12 @@
 <app-app-header></app-app-header>
 
 <div class="row">
-    <div class="col-sm-6 sideLeft">
+    <div class="col-sm-6 sideLeft container">
       <app-qr-code></app-qr-code>
     </div>
 
-    <div class="col-sm-6 sideRight">  
-      <app-participantes></app-participantes>
+    <div class="col-sm-6 sideRight container">  
+      <app-participantes *ngIf="!isHidden"></app-participantes>
     </div>
 </div>
 

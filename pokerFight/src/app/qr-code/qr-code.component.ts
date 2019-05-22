@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QrCodeComponent implements OnInit {
 
+  numbers = [4,5,4,8,7] 
+
   constructor() { }
 
   ngOnInit() {

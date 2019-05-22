@@ -10,23 +10,65 @@ export class ParticipantesComponent implements OnInit {
   constructor() { }
 
   numberOfParticipants: number = 0;
+
+  preencherParticipante1(){
+    let promise1 = new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        resolve('Daniel - Quirino');
+      }, 1000)
+    });
+
+    promise1.then((resultado)=>{
+      console.log(resultado)
+      this.addParticipants(resultado);
+    })
+  }
+
+  preencherParticipante2(){
+
+    let promise2 = new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        resolve('Geovanni - Mamedes');
+      }, 2000)
+    });
+
+    promise2.then((resultado)=>{
+      console.log(resultado)
+      this.addParticipants(resultado);
+    })
+  }
+
+  preencherParticipante3()  {
+    let promise3 = new Promise((resolve, reject) => {
+      setTimeout(()=>{
+        resolve('Thiago - Nascimento');
+      }, 3000)
+    });
+
+    promise3.then((resultado)=>{
+      console.log(resultado)
+      this.addParticipants(resultado);
+    })
+  } 
+
+
  
-  participantes = [
-    {name: "Daniel Quirino"},
-    {name: "Thiago Nascimento"},
-    {name: "Geovanni Mamedes"}
-  ]
+  participantes = []
 
   ngOnInit() {
     this.getNumberOfPartipantes();
+    this.preencherParticipante1();
+    this.preencherParticipante2()
+    this.preencherParticipante3()
   }
 
-  addParticipants() {
+  addParticipants(nome) {
     if (this.participantes.length > 5)
       return;
 
-    this.participantes.push({name: "Participante Novo"})
+    this.participantes.push({name: nome})
     this.numberOfParticipants = this.participantes.length;
+    this.getNumberOfPartipantes();
   }
 
   getNumberOfPartipantes() {
