@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
   footerTitle: string = 'Aguardando participantes...';
   color: boolean = false;
   cursor: string;
+  start: boolean = false;
 
   changeFooterTitle(){
     let promise1 = new Promise((resolve, reject) => {
@@ -44,4 +45,10 @@ export class FooterComponent implements OnInit {
       this.cursor = 'pointer';
   }
 
+  startPokerFigth() {
+    if ( this.cursor === 'pointer') {
+      this.start = true;
+      console.log(this.start)  
+    }
+  }
 }
