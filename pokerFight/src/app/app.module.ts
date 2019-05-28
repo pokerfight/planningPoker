@@ -2,6 +2,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+/* Components */
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
@@ -11,6 +12,10 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { QrCodeComponent } from './qr-code/qr-code.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParticipantesComponent } from './participantes/participantes.component';
+
+
+/* Services */
+import {ChatService} from './services/chat.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,9 @@ import { ParticipantesComponent } from './participantes/participantes.component'
     routing,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    ChatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

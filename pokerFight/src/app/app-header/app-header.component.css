@@ -1,14 +1,12 @@
-/* Gerais */
-.text {
-    color: white;
-}
-
-/* Cabecalho */
 .cabecalho {
     display: grid;
     grid-template-columns: repeat(1, fr);
     grid-template-rows: 40px;
     background-color: black;
+}
+
+.text {
+    color: white;
 }
 
 .projectName {

@@ -1,12 +1,12 @@
-
-<br><br>
-<h5>Para Participar é simples</h5>
-<p>Utilize o QR Code abaixo</p>
-<img alt='' src="assets/images/qrcode.jpg" (click)="addParticipants()">
-<p>- OU -</p>
-<a href="http://localhost:4200/home">http://pokerfight.com</a>
-<p>E insira o PIN abaixo</p>
-<ul><li *ngFor='let number of numbers'>
-        <span  class="numbers">{{number}}</span>
-</li></ul>
-
+<div>
+        <br><br>
+        <h5>Para Participar é simples</h5>
+        <p>Utilize o QR Code abaixo</p>
+        <img alt='' src="assets/images/qrcode.jpg" (click)="addParticipant()">
+        <p>- OU -</p>
+        <a href="http://localhost:4200/home">http://pokerfight.com</a>
+        <p>E insira o PIN abaixo</p>
+        <ul><li *ngFor='let number of numbers'>
+                <span  class="numbers">{{number}}</span>
+        </li></ul>
+</div>

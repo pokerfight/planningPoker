@@ -7,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  isHidden : boolean = true;
-
   constructor() { }
+
+  isHidden : boolean = true;
+  participantes: Array<any> = [];
+  participantesLength: number;
 
   ngOnInit() {
     this.waitingToGetParticipants();
+  }
+
+  receiveParticipantes($event) {
+    this.participantes = $event;
+    this.participantesLength = $event.length;
   }
 
   waitingToGetParticipants() {

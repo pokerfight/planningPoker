@@ -1,7 +1,12 @@
 describe('My First Test', function() {
-it('finds the content "type"', function() {
-    cy.visit('https://example.cypress.io')
+it('Escrever o nome da Sprint e começar o poker-figth"', function() {
+    cy.visit('http://localhost:4200/')
 
-    cy.contains('daniel')
-})
+    cy.get('#input')
+        .type('Sprint 04')
+        .should('have.value', 'Sprint 04')
+
+    cy.get('.btn')
+        .click()
+    })
 })

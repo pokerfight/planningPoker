@@ -43,14 +43,17 @@ io.on('connection',(socket)=>{
 
     console.log('new connection made.');
 
-
     socket.on('join', function(data){
       //joining
-      socket.join(data.room);
+      // socket.join(data.room);
 
-      console.log(data.user + 'joined the room : ' + data.room);
+      console.log('O participante: ' + data.participante + ' está online')
 
-      socket.broadcast.to(data.room).emit('new user joined', {user:data.user, message:'has joined this room.'});
+      // console.log(data.user + 'joined the room : ' + data.room);
+
+      //socket.broadcast.to(data.room).emit('new user joined', {user:data.user, message:'has joined this room.'});
+    
+      socket.broadcast.emit('new user joined', {participante: data.participante, message:'has joined this room.'});
     });
 
 
