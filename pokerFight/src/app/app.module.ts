@@ -15,7 +15,8 @@ import { ParticipantesComponent } from './participantes/participantes.component'
 
 
 /* Services */
-import {ChatService} from './services/chat.service';
+import { ChatService } from './services/chat.service';
+import { LoginService } from './services/login.service'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {ChatService} from './services/chat.service';
     FormsModule
   ],
   providers: [
-    ChatService
+    ChatService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,7 +9,7 @@ export class ParticipantesComponent implements OnInit {
 
   constructor() { }
 
-  @Input() participantesLength: number;
+  @Input() numberOfparticipantes: number;
   @Input() participantes: Array<any>;
   
   ngOnInit() {

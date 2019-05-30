@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   isHidden : boolean = true;
   participantes: Array<any> = [];
-  participantesLength: number;
+  numberOfparticipantes: number;
 
   ngOnInit() {
     this.waitingToGetParticipants();
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
 
   receiveParticipantes($event) {
     this.participantes = $event;
-    this.participantesLength = $event.length;
+    this.numberOfparticipantes = $event.length;
   }
 
   waitingToGetParticipants() {
