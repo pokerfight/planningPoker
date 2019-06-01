@@ -14,11 +14,15 @@ export class QrCodeComponent implements OnInit {
   participantes: Array<any> = [];
   count:number = 0;
 
+  ehUsuario = true;
+
   constructor(private _chatService:ChatService){
     this._chatService.newUserJoined()
     .subscribe((data) => {
       this.participantes.push(data.participante)
       this.count = this.count + 1;
+
+      this.ehUsuario = false;
     });
   }
 
@@ -38,6 +42,6 @@ export class QrCodeComponent implements OnInit {
   }
 
   join() {
-    this._chatService.joinRoom({participante: this.participantes[this.participantes.length-1]})
+      this._chatService.joinRoom({participante: this.participantes[this.participantes.length-1]})
   }
 }

@@ -2,14 +2,20 @@ import { Injectable } from "@angular/core";
 import * as io from 'socket.io-client';
 import { Observable } from 'rxjs';
 
+import { UtilsService } from '../services/utils.service'
+
 @Injectable()
 
 export class ChatService{
+
+    constructor(private _utilsService: UtilsService ) {}
 
     private socket = io('http://localhost:3000');
 
     joinRoom(data)
     {
+        data._id = this._utilsService.getContador();
+
         this.socket.emit('join', data);
     }
 
@@ -24,4 +30,4 @@ export class ChatService{
 
         return observable;
     }
-}
+}   

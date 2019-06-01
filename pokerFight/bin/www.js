@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
-
 var http = require('http');
 var express = require('express');
 var app = express();
@@ -47,7 +43,7 @@ io.on('connection',(socket)=>{
       //joining
       // socket.join(data.room);
 
-      console.log('O participante: ' + data.participante + ' está online')
+      console.log('O participante: ' + data.participante + ' está online e possui _id: ' + data._id )
 
       // console.log(data.user + 'joined the room : ' + data.room);
 
