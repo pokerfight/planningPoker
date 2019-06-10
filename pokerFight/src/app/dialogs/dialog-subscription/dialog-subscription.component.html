@@ -1,0 +1,18 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput [(ngModel)]="data.name" [ngModelOptions]="{standalone: true}" placeholder="Nome completo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Qual o seu squad ?</mat-label>
+    <mat-select disableRipple [(ngModel)]="data.squadName" [ngModelOptions]="{standalone: true}">
+      <mat-option *ngFor="let squad of squads" [value]="squad.value">
+        {{squad.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br/><br/>
+  <button type="button" class="btn btn-success" [mat-dialog-close]="data" cdkFocusInitial ><b>Confirmar Dados</b></button>
+
+</form>

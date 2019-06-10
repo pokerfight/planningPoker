@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-contador',
@@ -7,16 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContadorComponent implements OnInit {
 
-  constructor() { }
-
-  contador = 30;
-  zero = '';
+  minutes: string = '00'
+  segundos: number = 30;
+  zero: string = '';
 
   startCounter() {
       setInterval(() => {
-        if ((this.contador - 1) >= 0) {
-          this.contador = this.contador - 1
-        } if (this.contador < 10) 
+        if ((this.segundos - 1) >= 0) {
+          this.segundos = this.segundos - 1
+        } if (this.segundos < 10) 
           this.zero = '0';
       }, 1000);
     }

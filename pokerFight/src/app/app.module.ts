@@ -1,6 +1,8 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { MatDialogModule, MatInputModule, MatSelectModule } from "@angular/material";
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -16,7 +18,8 @@ import { ParticipantesComponent } from './participantes/participantes.component'
 
 /* Services */
 import { ChatService } from './services/chat.service';
-import { LoginService } from './services/login.service'
+import { LoginService } from './services/login.service';
+import { DialogSubscriptionComponent } from './dialogs/dialog-subscription/dialog-subscription.component'
 
 @NgModule({
   declarations: [
@@ -27,16 +30,24 @@ import { LoginService } from './services/login.service'
     AppHeaderComponent,
     QrCodeComponent,
     FooterComponent,
-    ParticipantesComponent
+    ParticipantesComponent,
+    DialogSubscriptionComponent
   ],
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule ,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [
     ChatService,
     LoginService
+  ],
+  entryComponents: [
+    DialogSubscriptionComponent,
   ],
   bootstrap: [AppComponent]
 })

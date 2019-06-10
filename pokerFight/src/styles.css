@@ -2,3 +2,5 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 @import url(http://allfont.net/allfont.css?fonts=ds-digital);
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
