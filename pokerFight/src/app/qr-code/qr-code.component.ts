@@ -1,10 +1,11 @@
-
 import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
 import { MatDialog} from '@angular/material'
 
 import { DialogSubscriptionComponent } from "../dialogs/dialog-subscription/dialog-subscription.component";
 import { IparticipantsData } from '../dialogs/interfaces/IparticipantsData';
 import { ChatService} from '../services/chat.service';
+import { ParticipantsService } from './../services/participantes';
+
 
 @Component({
   selector: 'app-qr-code',
@@ -13,7 +14,6 @@ import { ChatService} from '../services/chat.service';
 })
 export class QrCodeComponent implements OnInit {
 
-  @Output() participantesAdd = new EventEmitter<any>();
   numbers = [4,5,4,8,7] 
   participantes: Array<any> = [];
   count:number = 0;
@@ -26,27 +26,16 @@ export class QrCodeComponent implements OnInit {
   
   constructor(
     private _chatService:ChatService,
-    private dialog: MatDialog
-  ){
-    this.newUserJoined();
-  }
+    private dialog: MatDialog,
+    private participantsService: ParticipantsService
+  ){}
 
   ngOnInit() {
   }
 
-  newUserJoined() {
-    this._chatService.newUserJoined()
-      .subscribe((data) => {
-        this.participantes.push(data.participante)
-        this.count = this.count + 1;
-      });
-  }
-
   addParticipant() {
     const dialogRef = this.openDialog();
-
     this.closeDialog(dialogRef);
-
   }
 
   openDialog() {
@@ -65,6 +54,7 @@ export class QrCodeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       this.participantsData = result;
       console.log(result);
+      this.participantsService.addCrafter(this.participantsData.name, this.participantsData.squadName);
 
       this.validateIfParticipantAlreadyEntered();
       
@@ -80,8 +70,6 @@ validateIfParticipantAlreadyEntered() {
 }
 
   preencherParticipantes() {
-    this.participantes.push(this.participantsData.name + ' _id: ' + this.count);
-    this.participantesAdd.emit(this.participantes);
     
     this.join();
     
@@ -91,9 +79,8 @@ validateIfParticipantAlreadyEntered() {
 
   join() {
       this._chatService.joinRoom({
-        participante: this.participantes[this.participantes.length-1],
-        _id: this.count
+        name: this.participantsData.name,
+        squadName: this.participantsData.squadName
     })
   }
 }
-

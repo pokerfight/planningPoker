@@ -17,10 +17,10 @@ export class HomeComponent implements OnInit {
     this.waitingToGetParticipants();
   }
 
-  receiveParticipantes($event) {
-    this.participantes = $event;
-    this.numberOfparticipantes = $event.length;
-  }
+  // receiveParticipantes($event) {
+  //   this.participantes = $event;
+  //   this.numberOfparticipantes = $event.length;
+  // }
 
   waitingToGetParticipants() {
     let promise = new Promise((resolve, reject) => {

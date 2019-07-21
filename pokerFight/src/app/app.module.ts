@@ -14,6 +14,7 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { QrCodeComponent } from './qr-code/qr-code.component';
 import { FooterComponent } from './footer/footer.component';
 import { ParticipantesComponent } from './participantes/participantes.component';
+import { HttpClientModule } from "@angular/common/http";
 
 
 /* Services */
@@ -40,7 +41,8 @@ import { DialogSubscriptionComponent } from './dialogs/dialog-subscription/dialo
     BrowserAnimationsModule,
     MatDialogModule ,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   providers: [
     ChatService,

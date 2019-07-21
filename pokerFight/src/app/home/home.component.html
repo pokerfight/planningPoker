@@ -3,14 +3,12 @@
 <div class="row">
     <div class="col-sm-6 sideLeft container">
 
-      <app-qr-code (participantesAdd)='receiveParticipantes($event)'></app-qr-code>
+      <app-qr-code ></app-qr-code>
     </div>
 
     <div class="col-sm-6 sideRight container">  
       <app-participantes 
         *ngIf="!isHidden" 
-        [participantes]='participantes'
-        [numberOfparticipantes]='numberOfparticipantes'
       ></app-participantes>
     </div>
 </div>
