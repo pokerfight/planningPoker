@@ -4,3 +4,13 @@
 @import url(http://allfont.net/allfont.css?fonts=ds-digital);
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+.app {
+    height: 100%;
+    width: 100%;
+}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UtilsService} from '../services/utils.service';
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _utils : UtilsService) { }
 
   footerTitle: string = 'Aguardando participantes...';
   color: boolean = false;
@@ -50,5 +52,7 @@ export class FooterComponent implements OnInit {
       this.start = true;
       console.log(this.start)  
     }
+
+    this._utils.finalizeCrafterInput();
   }
 }

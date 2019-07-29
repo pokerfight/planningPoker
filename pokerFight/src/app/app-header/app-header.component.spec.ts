@@ -29,7 +29,7 @@ describe('AppHeaderComponent', () => {
   });
 
   it('should text project name to be iqual PokerFigth ', () => {
-    expect(component.buttonName).toEqual('X Finalizar');
+    expect(component.buttonNameFinish).toEqual('X Finalizar');
   });
 
   it('should loginService set sprint name ', () => {

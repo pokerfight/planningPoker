@@ -1,5 +1,8 @@
 <div class="cabecalho">
   <h4 class="text projectName">{{projectName}}</h4>
   <h5 class="text sprintName">{{sprintName}}</h5>
-  <button class="btn btn-danger"><p class="buttonTitle">{{buttonName}}<p></button>
+  <div class="button">
+    <button *ngIf="moreCrafters" class="btn btn-success"><p class="buttonTitle"><strong>{{buttonNameParticipate}}</strong><p></button>
+    <button class="btn btn-danger"><p class="buttonTitle"><strong>{{buttonNameFinish}}</strong><p></button>
+  </div>
 </div>

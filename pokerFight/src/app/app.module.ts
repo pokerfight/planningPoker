@@ -20,7 +20,11 @@ import { HttpClientModule } from "@angular/common/http";
 /* Services */
 import { ChatService } from './services/chat.service';
 import { LoginService } from './services/login.service';
-import { DialogSubscriptionComponent } from './dialogs/dialog-subscription/dialog-subscription.component'
+import { UtilsService } from './services/utils.service';
+import { DialogSubscriptionComponent } from './dialogs/dialog-subscription/dialog-subscription.component';
+import { FooterProgressComponent } from './footer-progress/footer-progress.component'
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { DialogSubscriptionComponent } from './dialogs/dialog-subscription/dialo
     QrCodeComponent,
     FooterComponent,
     ParticipantesComponent,
-    DialogSubscriptionComponent
+    DialogSubscriptionComponent,
+    FooterProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ import { DialogSubscriptionComponent } from './dialogs/dialog-subscription/dialo
   ],
   providers: [
     ChatService,
-    LoginService
+    LoginService,
+    UtilsService
   ],
   entryComponents: [
     DialogSubscriptionComponent,

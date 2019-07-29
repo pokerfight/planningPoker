@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LoginService } from '../services/login.service';
+import { UtilsService} from '../services/utils.service';
 
 @Component({
   selector: 'app-app-header',
@@ -10,15 +11,25 @@ import { LoginService } from '../services/login.service';
 
 export class AppHeaderComponent implements OnInit {
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private _utils : UtilsService
   ) {}
 
   projectName: string = 'PokerFigth';
   sprintName: string;
-  buttonName: string = 'X Finalizar';
+  buttonNameFinish: string = 'X Finalizar';
+  buttonNameParticipate: string = 'Participar'
+
+  moreCrafters: boolean = true;
+
 
   ngOnInit() {
     this.sprintName = this.loginService.sprint;
+
+    this._utils.emitirStatus.subscribe( status => {
+        this.moreCrafters = status.moreCrafters;
+      })
+
   }
 
 }

@@ -1,4 +1,10 @@
 <br><br><br>
-<p>
-   {{minutes}}:{{segundos}}{{contador}}
+
+<h3>{{instrucao}}</h3>
+<p class="contador" *ngIf="!startTimer">
+   {{horas}}:{{minutes}}'{{segundos}}{{contador}}''
 </p>
+<p class="contador" *ngIf="startTimer">
+    {{segundos}}''
+ </p>
+ 

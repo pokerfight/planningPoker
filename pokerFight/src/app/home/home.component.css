@@ -6,18 +6,12 @@
 /* Body */
 
 .sideLeft {
-
     background-color: white;
     text-align: center;
-    height: 100%;
-
 }
 
 .sideRight {
-
     background-color: #DCDCDC;
-    height: 100%;
-    margin-bottom: 0px;
 }
 
 .row {

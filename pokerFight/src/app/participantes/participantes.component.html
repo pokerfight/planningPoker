@@ -1,4 +1,5 @@
-<h4>Participantes ({{numberOfparticipantes}})</h4>
+<h4>Participantes ({{participantes.length}})</h4>
 <div class="alert alert-primary" role="alert" *ngFor="let participante of participantes; let i = index">
-  {{participantes[i]}}  
+  <strong>{{participantes[i]}}</strong>  
 </div>
+<p *ngIf="moreCrafters">{{craftersInfo}}</p>

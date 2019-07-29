@@ -1,16 +1,18 @@
 <app-app-header></app-app-header>
 
 <div class="row">
-    <div class="col-sm-6 sideLeft container">
-
+    <div *ngIf="moreCrafters" class="col-sm-6 sideLeft">
       <app-qr-code ></app-qr-code>
     </div>
-
-    <div class="col-sm-6 sideRight container">  
+    <div *ngIf="!moreCrafters" class="col-sm-6 sideLeft">  
+      <app-contador></app-contador>
+    </div>
+    <div class="col-sm-6 sideRight">  
       <app-participantes 
         *ngIf="!isHidden" 
       ></app-participantes>
     </div>
 </div>
 
-<app-footer></app-footer>
+<app-footer-progress *ngIf="startTimer"></app-footer-progress>
+<app-footer *ngIf="!startTimer"></app-footer> 

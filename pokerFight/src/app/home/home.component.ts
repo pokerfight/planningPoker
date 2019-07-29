@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UtilsService} from '../services/utils.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,20 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _utils : UtilsService) { }
 
   isHidden : boolean = true;
   participantes: Array<any> = [];
   numberOfparticipantes: number;
+  moreCrafters: boolean = true;
+  startTimer: boolean = false;
 
   ngOnInit() {
     this.waitingToGetParticipants();
-  }
 
-  // receiveParticipantes($event) {
-  //   this.participantes = $event;
-  //   this.numberOfparticipantes = $event.length;
-  // }
+    this._utils.emitirStatus
+      .subscribe( status => {
+
+        console.log(status);
+        this.moreCrafters = status.moreCrafters;
+        this.startTimer = status.startTimer;
+      })
+  }
 
   waitingToGetParticipants() {
     let promise = new Promise((resolve, reject) => {

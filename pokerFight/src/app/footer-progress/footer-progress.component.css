@@ -1,0 +1,24 @@
+@keyframes loading {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #E7E7E7;
+    position: relative;
+    height: 50px;
+    width: 100%
+  }
+  
+  div::after {
+    animation: loading 30s infinite ease-in-out;
+    background: green;
+    opacity: 0.5;
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0
+  }

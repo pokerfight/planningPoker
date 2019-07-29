@@ -1,8 +1,8 @@
 .cabecalho {
-    display: grid;
-    grid-template-columns: repeat(1, fr);
-    grid-template-rows: 40px;
+    display: flex;
+    justify-content: space-around;
     background-color: black;
+    min-height: 40px;
 }
 
 .text {
@@ -10,29 +10,29 @@
 }
 
 .projectName {
-    grid-column-start: 0;
-    grid-column-end: 1;
-    justify-self: start;
-    align-self: center;  
+    flex:1;
+    align-self: center;
 }
 
 .sprintName {
-    grid-column-start: 1;
-    grid-column-end: 2; 
-    justify-self: center;
+    text-align: center;
+    flex:1;
     align-self: center;
 }
 
 .btn {
-    grid-column-start: 2;
-    grid-column-end: 3; 
-    justify-self: end;
-    align-self: center;
+    width: 120px;
+    height: 25px;
 
-    width: 100px;
-    height: 20px;
+    margin-right: 20px;
 }
 
 .buttonTitle {
     line-height:0.5;
+}
+
+.button {
+    flex:1;
+    text-align: end;
+    align-self: center;
 }

@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   title: string = "PokerFigth";
   message: string = "Qual o nome da luta ?";
   
-  sprintName = '';
+  sprintName = null;
 
   redirectHome(){
     this.router.navigate(['/home']);

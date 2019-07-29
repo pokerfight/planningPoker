@@ -1,6 +1,7 @@
 import { ParticipantsService } from './../services/participantes';
 import { Component, OnInit, Input } from '@angular/core';
 import { ChatService} from '../services/chat.service';
+import { UtilsService} from '../services/utils.service';
 
 @Component({
   selector: 'app-participantes',
@@ -10,9 +11,14 @@ import { ChatService} from '../services/chat.service';
 export class ParticipantesComponent implements OnInit {
 
   participantes = [];
+  craftersInfo = 'Aguardando paricipantes...';
+  moreCrafters: boolean = true;
 
-  constructor(private _chatService:ChatService,
-    private participantsService: ParticipantsService) { 
+  constructor(
+    private _chatService:ChatService,
+    private participantsService: ParticipantsService,
+    private _utils : UtilsService
+  ) { 
 
     this.participantes = [];
 
@@ -34,6 +40,10 @@ export class ParticipantesComponent implements OnInit {
   }
   
   ngOnInit() {
+    this._utils.emitirStatus
+      .subscribe( status => {
+        this.moreCrafters = status.moreCrafters;
+      })
   }
 
 }
